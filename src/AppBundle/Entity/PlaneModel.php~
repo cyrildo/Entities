@@ -191,15 +191,6 @@ class PlaneModel
     {
         return $this->isAvailable;
     }
-
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->id . ' ' . $this->model;
-    }
-
     /**
      * Constructor
      */
@@ -218,6 +209,7 @@ class PlaneModel
     public function addPlane(\AppBundle\Entity\Flight $plane)
     {
         $this->planes[] = $plane;
+
         return $this;
     }
 
