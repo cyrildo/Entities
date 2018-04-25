@@ -186,5 +186,13 @@ class PlaneModel
     {
         return $this->isAvailable;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->id . ' ' . $this->model;
+    }
 }
 
