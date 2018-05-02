@@ -17,19 +17,19 @@ class FlightController extends Controller
     /**
      * Lists all flight entities.
      *
-     * @Route("/", name="flight_index")
-     * @Method("GET")
-     */
-    public function indexAction()
-    {
-        $em = $this->getDoctrine()->getManager();
+         * @Route("/", name="flight_index")
+         * @Method("GET")
+         */
+        public function indexAction()
+        {
+            $em = $this->getDoctrine()->getManager();
 
-        $flights = $em->getRepository('AppBundle:Flight')->findAll();
+            $flights = $em->getRepository('AppBundle:Flight')->findAll();
 
-        return $this->render('flight/index.html.twig', array(
-            'flights' => $flights,
-        ));
-    }
+            return $this->render('flight/index.html.twig', array(
+                'flights' => $flights,
+            ));
+        }
 
     /**
      * Creates a new flight entity.
