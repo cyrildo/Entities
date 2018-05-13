@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\AppBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -10,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 use AppBundle\Entity\Review;
 use AppBundle\Entity\User;
+use AppBundle\Form\ReviewType;
 
 /**
  * Review controller.
@@ -45,7 +47,7 @@ class ReviewController extends Controller
     public function newAction(Request $request)
     {
         $review = new Review();
-        $form = $this->createForm('AppBundle\Form\ReviewType', $review);
+        $form = $this->createForm(ReviewType::class, $review);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
