@@ -193,4 +193,13 @@ class Reservation
     {
         return $this->passenger;
     }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->reservations = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
 }
