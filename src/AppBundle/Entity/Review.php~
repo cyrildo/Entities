@@ -193,4 +193,13 @@ class Review
     {
         return $this->reviewAuthor;
     }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->reviews = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
 }
